@@ -1,0 +1,41 @@
+<html ng-app="timewaste">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="login.css">
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container" ng-controller="navcont">
+                 <div ng-show="!loggedIn">
+                     <input type="text" ng-model="login.email">
+                     <input type="password" ng-model="login.pswrd">
+                     <button ng-click="logusrin()">Login</button>
+                      <a ui-sref="signUp">Create An Account</a>
+                </div>
+                <div ng-show="loggedIn"><a ui-sref="editprofile">Edit Profile</a>
+                    <a ui-sref="follow">FollowUsers</a>
+                    <a ng-click="logOut()">Logout</a>
+                </div>
+            </div>
+        </nav>
+        <div ui-view></div>
+        
+        
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+        <!--CONTROLLERS-->
+        <script type="text/javascript" src="login.js"></script>
+        <script type="text/javascript" src="signupcontroller.js"></script>
+        <script type="text/javascript" src="logincontroller.js"></script>
+        <script type="text/javascript" src="edit-profile-controller.js"></script>
+        <script type="text/javascript" src="main-controller.js"></script>
+        <script type="text/javascript" src="follow/follow-controller.js"></script>
+        
+        <!-- Libraries-->
+        <script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+        <script src="node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+        <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+    </body>
+</html>
